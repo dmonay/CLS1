@@ -1,0 +1,32 @@
+{
+  "name": "rapgenius-app",
+  "version": "0.0.0",
+  "main": "lib/rapgenius-app.js",
+  "description": "Hire me",
+  "homepage": "index.html",
+  "bugs": "https://github.com/dmonay/rapgenius-app/issues",
+  "author": {
+    "name": "Dmitry Pavluk",
+    "email": "pavluk73@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmonay/rapgenius-app"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "jshint-stylish": "^0.2.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
