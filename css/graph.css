@@ -1,0 +1,38 @@
+.y.axisRight text {
+    fill: orange;
+}
+
+.y.axisLeft text {
+    fill: black;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar1 {
+  fill: black;
+}
+
+.bar2 {
+  fill: orange;
+}
+
+.x.axis path {
+  display: none;
+}
+
+svg {
+  font: 13px sans-serif;
+}
+
+.bar1:hover {
+  fill: #525559;
+}
+
+.bar2:hover {
+  fill:#bc7b01;
+}
