@@ -1,0 +1,208 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Hello RapGenius</title>
+    
+    <meta name="description" content="Who is Dmitry Pavluk and why should you care?" />
+    <meta name="author" content="Dmitry Pavluk" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/graph.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon2.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="3">
+        <span class="try">Hello</span>
+        <h1>RapGenius!</h1>
+    </div>
+
+    <div id="ing" class="step" data-x="850" data-y="5000" data-rotate="90" data-scale="5">
+        <img src="who.png" style="width:200px;">
+        <p style="font-size:40px;">I'm a <b class="positioning">frontend web developer</b> specializing in data visualization. Data visualization extracts insights from data sets. This is a powerful tool for informing decisions and finding patterns. My canvas is bits and bytes: I execute my designs through frontend frameworks. </p>
+    </div>
+
+    <div id="big" class="step" data-x="3300" data-y="2100" data-rotate="180" data-scale="1">
+        <span class="thoughts">What can I do for you?</span>
+    </div>
+
+    <div id="tiny" class="step" data-x="2825" data-y="2825" data-z="-22000" data-rotate="300" data-scale="1">
+        <p style="text-align:center;" ><b>Why will I deliver?</b></p><br>
+        <p>1. Because I believe in what I do. I believe that the Internet is the most powerful medium in history and affords an incredible opportunity to tell stories.</p>
+    </div>
+
+    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="2">
+        <p>2. Wordsmiths and beats get me excited. I went <b class="berserk">berserk</b> when I found out last week that the Wu Tang Clan is recording a <a href="http://www.forbes.com/sites/zackomalleygreenburg/2014/05/06/unlocking-the-wu-tang-clans-secret-album-in-morocco/" target="_blank">secret album</a> in Morocco.</p>
+    </div>
+
+    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
+        <p>3. Because I'm an active user of RapGenius and want to help take the experience to the next level. RapGenius is sitting on a treasure trove of data. I want to parse that data, extract insights, and present it in a visually captivating way. The results could be <a href="http://rappers.mdaniels.com.s3-website-us-east-1.amazonaws.com/" target="_blank">really cool.</a> </p>
+    </div>
+
+    <div id="its-in-3d" class="step" data-x="10200" data-y="2800" data-z="-30" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <p><span class="have">Ok, he can</span> <span class="you">talk the talk,</span> <span class="noticed"> but can he</span> <span class="its">walk the walk?</span></p>
+
+        
+    </div>
+
+    <div id="proof" class="step" data-x="7000" data-y="5000" data-scale="1">
+    <p>Check out my <a href="http://www.dmitrypavluk.com" target="_blank">portfolio</a>, <a href="https://github.com/dmonay" target="_blank">GitHub</a>, and <a href="https://www.linkedin.com/in/dmitrypavluk" target="_blank">LinkedIn</a>.<br><br>
+
+    <a href="http://dmitrypavluk.com/my_work/world_pollution_2.html" target="_blank">This</a> is the project I am most proud of. <br><br>And you can find my resume <a href="Dmitry_Pavluk_Resume.pdf" target="_blank">here</a>. 
+    </p>
+    </div>
+
+     <div id="one-more-thing" class="step" data-x="8000" data-y="6000" data-scale="2">
+        <p>I would <b>love</b> to hear from you! Shoot me an email at <a href="mailto:pavluk73@gmail.com">pavluk73@gmail.com</a> or give me a ring at 646.462.2714</p><br><br>
+        <p>I'm located in Williamsburg, blocks away from you guys.</p>
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).keydown(function (e) {
+     if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 32) { 
+       $(".hint").fadeOut();
+     }
+});
+</script>
+    
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script><script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+<!--D3 script-->
+<script type="text/javascript">
+var margin = {top: 80, right: 50, bottom: 80, left: 80},
+    width = 800 - margin.left - margin.right,
+    height = 533 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y0 = d3.scale.linear().domain([0, 40]).range([height, 0]),
+y1 = d3.scale.linear().domain([0, 100]).range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+// create left yAxis
+var yAxisLeft = d3.svg.axis().scale(y0).ticks(4).orient("left");
+// create right yAxis
+var yAxisRight = d3.svg.axis().scale(y1).ticks(4).orient("right");
+
+var svg = d3.select("#big").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("class", "graph")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data.tsv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.year; }));
+  y0.domain([0, d3.max(data, function(d) { return d.sati; })]);
+  
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis axisLeft")
+      .attr("transform", "translate(0,0)")
+      .call(yAxisLeft)
+    .append("text")
+      .attr("y", 6)
+      .attr("dy", "-2em")
+      .style("text-anchor", "middle")
+      .text("Product-Market Fit");
+    
+  svg.append("g")
+      .attr("class", "y axis axisRight")
+      .attr("transform", "translate(" + (width) + ",0)")
+      .call(yAxisRight)
+    .append("text")
+      .attr("y", 6)
+      .attr("dy", "-2em")
+      .attr("dx", "2em")
+      .style("text-anchor", "end")
+      .text("Proximity to ultimate vision");
+
+  bars = svg.selectAll(".bar").data(data).enter();
+
+  bars.append("rect")
+      .attr("class", "bar1")
+      .attr("x", function(d) { return x(d.year); })
+      .attr("width", x.rangeBand()/2)
+      .attr("y", function(d) { return y0(d.sati); })
+      .attr("height", function(d,i,j) { return height - y0(d.sati); }); 
+
+  bars.append("rect")
+      .attr("class", "bar2")
+      .attr("x", function(d) { return x(d.year) + x.rangeBand()/2; })
+      .attr("width", x.rangeBand() / 2)
+      .attr("y", function(d) { return y1(d.dopeness); })
+      .attr("height", function(d,i,j) { return height - y1(d.dopeness); }); 
+
+  svg.append("text")
+     .attr('x', 170)
+     .attr('y', 0)
+     .text('State of Affairs at RapGenius')
+     .attr('font-family', 'arial')
+     .attr('font-size', '25px')
+     .attr('fill', 'gray');
+
+   svg.append("text")
+     .attr('x', 175)
+     .attr('y', 50)
+     .text('*Dmitry is hired')
+     .attr('font-family', 'arial')
+     .attr('font-size', '15px')
+     .attr('fill', 'gray');
+
+     svg.append("text")
+     .attr('x', 168)
+     .attr('y', 70)
+     .text('**Dmitry is Rookie of the Year')
+     .attr('font-family', 'arial')
+     .attr('font-size', '15px')
+     .attr('fill', 'gray');
+
+});
+
+function type(d) {
+  d.sati = +d.sati;
+  return d;
+}
+
+</script>
+</body>
+</html>
+
