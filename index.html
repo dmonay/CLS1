@@ -18,6 +18,7 @@
     <link href="css/top5.css" rel="stylesheet" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body class="impress-not-supported">
@@ -48,37 +49,38 @@
                 <table >
                     <tr>
                         <td>
-                            My top 5 of all time
+                            My top 5 tracks of all time<sup>*</sup>
                         </td>
                     </tr>
                     <tr>
                         <td >
-                            Talib Kweli / Black Star
+                            Respiration - <span style="color:#d6d7df">Black Star</span>
                         </td>
                     </tr>
                     <tr>
                         <td >
-                            Notorious B.I.G.
+                            Memory Lane - <span style="color:#d6d7df">Nas </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="song">
+                            My Melody - <span style="color:#d6d7df">Rakim and Eric B</span>
                         </td>
                     </tr>
                     <tr>
                         <td >
-                            Nas
+                            Duel of the Iron Mic - <span style="color:#d6d7df">GZA</span>
                         </td>
                     </tr>
                     <tr>
                         <td >
-                            Rakim and Eric B
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            GZA / Wu Tang
+                            Method Man - <span style="color:#d6d7df">Wu Tang</span>
                         </td>
                     </tr>
                 </table>
+
             </div>
-            
+            <p id="PS">*Definitely not NY-biased</p>
         </div>
     </div>
 
@@ -245,6 +247,13 @@ function type(d) {
   return d;
 }
 
+$(document).ready(function() {
+    $("tr").hover(function() {
+        $(this).siblings("tr").addClass("gone");
+    }, function() {
+        $(this).siblings("tr").removeClass("gone");
+    });
+});
 </script>
 </body>
 </html>
